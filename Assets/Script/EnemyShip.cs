@@ -40,8 +40,10 @@ namespace HyperSol.Games.SpaceGame
         public void OnShipIdleMoving()
         {
             DOTween.Sequence()
+                .Append(transform.DOMoveY(transform.position.y, 1f))
                 .Append(transform.DOMoveY(transform.position.y + 1f, 2f))
-                .Append(transform.DOMoveY(transform.position.y, 1f)).SetEase(Ease.OutCirc)
+                .Append(transform.DOMoveY(transform.position.y, 1f))
+                .SetEase(Ease.OutCirc)
                 .SetLoops(-1).Loops();
         }
         
