@@ -9,10 +9,10 @@ public class BulletController : MonoBehaviour
     void Start()
     {
         _rigidbody2D = GetComponent<Rigidbody2D>();
-        Destroy(gameObject,0.5f);
+        Destroy(gameObject,5f);
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         _rigidbody2D.AddForce(transform.up * 0.5f,ForceMode2D.Impulse);
     }

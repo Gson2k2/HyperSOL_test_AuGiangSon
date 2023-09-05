@@ -27,6 +27,7 @@ namespace HyperSol.Games.SpaceGame
         private void Start()
         {
             bgMat = bg.material;
+            Application.targetFrameRate = 60;
             StartCoroutine(IShipStart(0.5f));
         }
 
@@ -63,7 +64,7 @@ namespace HyperSol.Games.SpaceGame
             StopCoroutine(IShipGridCellSetUp(0f));
         }
 
-        private void Update()
+        private void FixedUpdate()
         {
             bgOffset += (Time.deltaTime * 0.5f) / 10f;
             bgMat.SetTextureOffset("_MainTex",new Vector2(bgOffset,0));
